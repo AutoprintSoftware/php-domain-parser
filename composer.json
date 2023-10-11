@@ -28,7 +28,7 @@
         "url parsing"
     ],
     "require": {
-        "php": ">=5.3.0",
+        "php": ">=8.1",
         "ext-curl": "*",
         "ext-intl": "*",
         "ext-mbstring": "*"

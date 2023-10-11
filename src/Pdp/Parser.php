@@ -26,12 +26,12 @@ class Parser
      *
      * @see https://tools.ietf.org/html/rfc3986#section-3.1
      */
-    const SCHEME_PATTERN = '#^([a-zA-Z][a-zA-Z0-9+\-.]*)://#';
+    public const SCHEME_PATTERN = '#^([a-zA-Z][a-zA-Z0-9+\-.]*)://#';
 
     /**
      * @var string IP address regex pattern
      */
-    const IP_ADDRESS_PATTERN = '/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';
+    public const IP_ADDRESS_PATTERN = '/^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/';
 
     /**
      * @var PublicSuffixList Public Suffix List
@@ -118,7 +118,7 @@ class Parser
      */
     public function parseHost($host)
     {
-        $host = mb_strtolower($host, 'UTF-8');
+        $host = mb_strtolower($host ?? '', 'UTF-8');
 
         $subdomain = null;
         $registerableDomain = null;

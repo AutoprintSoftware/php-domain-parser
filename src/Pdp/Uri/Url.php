@@ -81,7 +81,7 @@ class Url
         $query,
         $fragment
     ) {
-        $this->scheme   = mb_strtolower($scheme, 'UTF-8');
+        $this->scheme   = mb_strtolower($scheme ?? '', 'UTF-8');
         $this->user     = $user;
         $this->pass     = $pass;
         $this->host     = $host;
@@ -118,7 +118,7 @@ class Url
      */
     public function __toString()
     {
-        $url = null;
+        $url = '';
 
         if ($this->scheme) {
             $url .= $this->scheme . '://';
